@@ -1,5 +1,3 @@
-theme: Midnight
-
 ## Lab Report 1
 # Step 1 - Installing VScode
 For the first step, I set up VScode. Since it was already pre-installed on the basement computers,
