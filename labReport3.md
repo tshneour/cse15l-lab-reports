@@ -1,6 +1,6 @@
 ## Lab Report 3
 
-In this report, I will be covering 4 different options of Linux's `grep` command.
+In this report, I will be covering 4 different options of Linux's `grep` command. For all 4 of these options, I used Linux's built-in manual `man` to learn about them [Grep Manual](https://linux.die.net/man/1/grep).
 
 # Grep's Recursive Option
 
@@ -39,7 +39,7 @@ In this example, I use `-c` to count how many instances of "California" there ar
 
 ```
 [cs15lwi23zzz@ieng6-203]:skill-demo1-data:249$ grep -cr "Napoleon" written_2/travel_guides/berlitz1 
-other files...
+(other files...)
 written_2/travel_guides/berlitz1/WhereToItaly.txt:12
 written_2/travel_guides/berlitz1/WhereToJapan.txt:0
 written_2/travel_guides/berlitz1/WhereToJerusalem.txt:1
@@ -58,28 +58,45 @@ Perhaps I want to compare against other files how many times a word is used. Int
 Grep's `-l` option allows you to only display the *names* of the files that contain the matching string.
 
 ```
+[cs15lwi23zzz@ieng6-203]:skill-demo1-data:263$ grep -l "Eiffel Tower" written_2/travel_guides/berlitz1/HistoryFrance.txt written_2/travel_guides/berlitz1/IntroFrance.txt 
+written_2/travel_guides/berlitz1/HistoryFrance.txt
+```
+
+In this case, I use `-l` to see which of `IntroFrance.txt` and `HistoryFrance.txt` contains mention of "Eiffel Tower". In this case, it displays only `HistoryFrance.txt` as output since it contains "Eiffel Tower". It's useful to use `-l` when I'm grepping multiple files and only care to see the paths of the files, not all the lines where the pattern is used.
+
+```
+[cs15lwi23zzz@ieng6-203]:skill-demo1-data:274$ grep -l "Winged Hussar" written_2/travel_guides/berlitz2/Poland-History.txt
 
 ```
 
+In this example, I use `-l` to see if a single file `Poland-History.txt` contains "Winged Hussar". As seen however, there is no output, meaning that `Poland-History.txt` does not contain "Winged Hussar". If used as a bash command, `grep -l` could be used in the same way to check different files for a match.
 
+# Grep's Inverse Line Matching Option
 
-```
-
-```
-
-
-
-# Grep's Inverse File Matching Option
-
-Grep's `-L` option allows you to only display the *names* of the files that *do not* contain the matching string.
+Grep's `-v` option allows you to only display the lines of a file that *do not* contain the matching string.
 
 ```
+[cs15lwi23zzz@ieng6-203]:skill-demo1-data:285$ grep -v "the" written_2/travel_guides/berlitz2/California-History.txt  
+A Brief History
+The Spanish Missions
+The Mexicans
+The American Pioneers
+The Gold Rush
+Statehood
+The Great Earthquake
+Reform, Progress, and Oil
+Hollywood
+Depression and Boom
 
+Beatniks, Hippies, and Modern Times
 ```
 
-
-
-```
+Here, I use `-v` to display all the lines in `California-History` that don't contain "the". As seen, it only prints the Section Headers, omitting all sentences. This is useful, particularly in this case, to see all non-sentences (perhaps I want to see what topics `California-History.txt` covers). Then, I could do this for other History files to compare and contrast.
 
 ```
+[cs15lwi23zzz@ieng6-203]:skill-demo1-data:292$ grep -v "a" written_2/non-fiction/OUP/Abernathy/ch2.txt
+Development of the Progressive Bundle System
+Textiles: From Fiber to Cloth to Finished Product
+```
 
+Here, `-v` allows me to find which lines don't use "a" in `ch2.txt`. As shown, neither of the outputted lines have "a" in them. This grep option is particularly useful in this way by bounding the contents of the file. I can use it to help find a particular line, or maybe I want to save this output back into the original file to overwrite without the presence of a particular word or phrase.
