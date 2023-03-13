@@ -4,7 +4,8 @@ In this lab report, I will be showing a quicker way to do the lab competition fr
 
 # Part 1 - Writing the Bash Script
 
-Writing the bash script was pretty straightforward. For the most part, I'm able to reuse most of the commands that I showed in lab report 4 (as seen below).
+Writing the bash script was pretty straightforward. For the most part, I'm able to reuse most of the commands that I used in lab report 4 (as seen below).
+I will go into more detail on these commands in Part 2.
 
 ![image](https://user-images.githubusercontent.com/122496719/224612337-8d4f51fa-d9c1-4251-8b71-26290386d239.png)
 
@@ -15,7 +16,7 @@ my ieng6 account. Then, I manually typed in the `ssh` command to log in.
 
 # Part 2 - Speedrunning The Competition
 
-Here, I'll outline exactly what keys I pressed and what commands I'm running (including the contents of the script).
+Here, I'll outline exactly what keys I pressed and what commands I ran (including the contents of the script).
 
 # Part 2.1 - Moving Over The Bash File
 
