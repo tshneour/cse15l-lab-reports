@@ -78,8 +78,8 @@ git commit -m "Fixed index typo"
 git push
 ```
 
-The `javac` and `java` commands recompile and run the tests again. The `git add` command tells Git what files I'm committing. Then `git commit -m "Fixed index 
-typo"` prepares those files to be sent to the repository. Lastly, the git push command sends those files to my forked repository and replaces 
+The `javac` and `java` commands recompile and run the tests again. The `git add` command tells Git what files I'm committing. Then `git commit -m "Fixed index
+typo"` prepares those files to be sent to the repository. Lastly, the git push command sends those files to my forked repository and in this case, replaces
 the old `ListExamples.java` file.
 
 So, even though it's technically cheating, I was able to complete the competition in 3 commands and a few keypresses. Definitely **way** faster than before.
